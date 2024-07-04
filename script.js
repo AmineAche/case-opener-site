@@ -1,4 +1,3 @@
-import $ from 'jquery';
 var audio = new Audio("./Zelda.mp3");
 
     $(document).ready(function generateRandomCards() {
