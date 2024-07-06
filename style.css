@@ -6,8 +6,8 @@
 
 
 .cardList {
-  height: 100px;
-  width: 400px;
+  height: 200px;
+  width: 800px;
   position: relative;
   margin: 10px;
   border: 5px solid #880015;
@@ -18,8 +18,8 @@
 .card {
   display: inline-block;
   text-align: center;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   line-height: 100px;
   padding: 5px;
   background-color: #99e;
@@ -60,17 +60,17 @@
 }
 .none {
   background-color: #d4cfcf;
-  width: 110px;
+  width: 220px;
 }
 .rare {
   background-color: #1c1919;
-  width: 110px;
+  width: 220px;
 }
 .mythical {
   background-color: #5072c9;
-  width: 110px;
+  width: 220px;
 }
 .legendary {
   background-color: #FED850;
-  width: 110px;
+  width: 220px;
 }
