@@ -3,17 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Twitch Clip</title>
+    <title>Twitch Clip Embed</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #000; /* Ajout d'un fond noir pour tester */
+        }
+        #clipContainer {
+            width: 50%;
+            height: 50%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Embedded Twitch Clip</h1>
-    <iframe
-        src="https://clips.twitch.tv/embed?clip=GeniusSpeedyWoodpeckerNononoCat-aOLiIT_4d6E5jqG-&parent=yourdomain.com"
-        height="720"
-        width="1280"
-        frameborder="0"
-        scrolling="no"
-        allowfullscreen="true">
-    </iframe>
+    <div id="clipContainer">
+        <iframe
+            src="https://clips.twitch.tv/embed?clip=GeniusSpeedyWoodpeckerNononoCat-aOLiIT_4d6E5jqG-&parent=yourwebsite.com"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        function showClip() {
+            const clipContainer = document.getElementById('clipContainer');
+            clipContainer.style.opacity = '1';
+            console.log('Clip is now visible');
+
+            setTimeout(() => {
+                clipContainer.style.opacity = '0';
+                console.log('Clip is now hidden');
+            }, 5000);
+        }
+
+        document.getElementById('clipContainer').style.opacity = '0';
+
+        setInterval(showClip, 15000);
+
+        document.addEventListener('visibilitychange', function() {
+            const clipContainer = document.getElementById('clipContainer');
+            if (document.hidden) {
+                clipContainer.style.opacity = '0';
+                console.log('Page is not visible');
+            }
+        });
+
+        console.log('Script loaded successfully');
+    </script>
 </body>
 </html>
